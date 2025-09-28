@@ -6,7 +6,10 @@ _.python.venv = { path = ".venv", create = true } # This will create Python virt
 
 [tasks.venv]
 description = "Install Python requirements"
-run = "pip install -r requirements.txt"
+run = [
+    "pip install -r requirements.txt",
+    "[ ! -e .env ] && cp .env.template .env"
+]
 
 [tasks.infra-up]
 description = "Start necessary Docker containers"
