@@ -1,0 +1,10 @@
+[tools]
+python = "3.13.7"
+
+[tasks.venv]
+description = "Create Python virtual environment and install requirements"
+run = [
+  "python -m venv .venv",
+  "source .venv/bin/activate",
+  "pip install -r requirements.txt"
+]
